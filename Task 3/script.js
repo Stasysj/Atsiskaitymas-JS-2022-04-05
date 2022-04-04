@@ -31,7 +31,7 @@ btnEl.addEventListener("click", () => {
 
 function makeCardsToHtml(arr) {
   arr.forEach((user) => {
-    let figureEl = document.createElement("figure");
+    const figureEl = document.createElement("figure");
     figureEl.className = "figure";
     figureEl.innerHTML = `
     <img src="${user.avatar_url}" alt="Avatar" >
