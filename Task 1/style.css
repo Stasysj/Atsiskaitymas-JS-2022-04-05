@@ -3,8 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 /* Mobile first */
@@ -23,7 +23,8 @@
 }
 
 form {
-  max-width: 80%;
+  max-width: 900px;
+  width: 80%;
   margin: 50px auto;
   display: flex;
   flex-wrap: wrap;
@@ -59,7 +60,38 @@ form {
   }
 
   #search,
-  #submit-btn {
+  #submit-btn,
+  .reiksmes p,
+  .antraste p {
     font-size: 2em;
   }
+}
+/* ----Mano CS------------------------------ */
+.isvedimoLaukas {
+  padding: 20px;
+}
+#output {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  width: 80%;
+  margin: 50px auto;
+  font-size: 1.1em;
+}
+.reiksmes {
+  background-color: rgb(232, 240, 254);
+  flex-basis: 35%;
+  text-align: center;
+}
+.antraste {
+  background-color: #f7f7f7;
+  flex-basis: 65%;
+}
+.antraste p:nth-child(2) {
+  border-top: solid 1px rgb(232, 240, 254);
+  border-bottom: solid 1px rgb(232, 240, 254);
+}
+.reiksmes p:nth-child(2) {
+  border-top: solid 1px #f7f7f7;
+  border-bottom: solid 1px #f7f7f7;
 }
