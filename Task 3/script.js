@@ -10,4 +10,33 @@ Paspaudus mygtuką "Show users":
 Pastaba: Informacija apie user'į (jo kortelė) bei turi turėti bent minimalų stilių;
 -------------------------------------------------------------------------- */
 
-const ENDPOINT = 'https://api.github.com/users';
+const ENDPOINT = "https://api.github.com/users";
+
+const outputEl = document.getElementById("output");
+const btnEl = document.getElementById("btn");
+async function getUsers() {
+  try {
+    const resp = await fetch(ENDPOINT);
+    const data = await resp.json();
+    makeCardsToHtml(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+btnEl.addEventListener("click", () => {
+  outputEl.textContent = "";
+  getUsers();
+});
+
+function makeCardsToHtml(arr) {
+  arr.forEach((user) => {
+    const figureEl = document.createElement("figure");
+    figureEl.className = "figure";
+    figureEl.innerHTML = `
+    <img src="${user.avatar_url}" alt="Avatar" >
+      <figcaption>${user.login}</figcaption>
+    `;
+    outputEl.append(figureEl);
+  });
+}
